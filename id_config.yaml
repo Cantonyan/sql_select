@@ -1,0 +1,8 @@
+sql:
+    SERVER: ip,端口
+    DATABASE: master
+    UID: 
+    PWD: 
+hive: 
+    username: 
+    password: 

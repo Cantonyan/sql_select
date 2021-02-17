@@ -1,0 +1,31 @@
+from QM_select import select_sql
+conn = select_sql()
+
+from QM_select import select_hive
+hive = select_hive()
+hive.log()
+exe_id = hive.execute(hive_query, hive_database)
+df_csv = hive.down_csv(exe_id)
+
+from py_tools import make_time_df
+Yms = make_time_df('20160101', '%s01' %MONTH, '%Y%m')
+
+xl_read = pd.ExcelFile('data_hive_%s.xlsx' %week)
+xl_read.sheet_names
+xl_read.parse(sheet_name)
+
+xl_write = pd.ExcelWriter('data_hive_%s_clean.xlsx' %week)
+df.to_excel(xl_write, sheet_name = )
+xl_write.save()
+
+from py_tools import get_brother_path
+brother_path = get_brother_path( )
+
+from py_tools import get_config
+month = get_config()
+
+from py_tools import month_plus
+ym2 = month_plus(ym,1)
+
+from dataprocessing import check_change
+check = check_change(df_data_l, df_data_t, how='left', on=['ym', 'appid', 'quotaid', 'device'], value = 'abs')
